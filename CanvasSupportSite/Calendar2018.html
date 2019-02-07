@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+
+<style type="text/css">
+
+body {
+    max-width: 99%;
+}
+/* Styling for the title (Month and Year) of the calendar */
+div.title {
+    font: x-large "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    vertical-align: bottom;
+    height: 40px;
+    background-color: white;
+    color: black;
+    width: 200px;
+    display: inline-block;
+    }
+/* Styling for the overall table */
+table {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 400px;
+    border: 1px solid black;
+    }
+/* Styling for the column headers (days of the week) */
+th {
+    padding: 0 0.5em;
+    text-align: center;
+    background-color: #485366;
+    color:white;
+    }
+/* Styling for the individual cells (days) */
+td  {     
+    font-size: medium;
+    padding: 0.25em 0.25em;   
+    width: 14%; 
+    height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid white;
+    background-color: white;
+    }
+/* Styling for the date numbers */
+.date  {     
+    font-size: large;
+    padding: 0.25em 0.25em;   
+    text-align: left;
+    vertical-align: top;
+    }
+
+.blackout  {     
+    font-size: large;
+    padding: 0.25em 0.25em;   
+    text-align: left;
+    vertical-align: top;
+    background-color: black;
+    color: white;
+    }
+
+.greyout  {     
+    font-size: large;
+    padding: 0.25em 0.25em;   
+    text-align: left;
+    vertical-align: top;
+    background-color: #8c8c8c;
+    color: white;
+    }
+
+.SH {
+    background-color: #8cd98c;
+    color: white;
+}
+
+/* Styling for navigation buttons */
+div.navc {
+    left: 58px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.nav {
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 16px;
+    background-color: #485366;
+    color: white;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.nav:hover {
+    background-color: #353f4f;
+}
+
+/* Styling for info belo calendar */
+
+hr {
+    border: 2px solid #485366;
+    margin-top: 20px;
+}
+
+.monthinfo {
+    font-size: 16px;
+    text-align: left;
+    vertical-align: bottom;
+    background-color: white;
+    color: black;
+    width: 400px;
+}
+
+a:link a:visited {
+    color: #485366;
+}
+
+
+   
+</style>
+
+<html>
+    <head>
+        <title>Spring 2019</title>
+    </head>
+
+    <body>
+
+        <div class="MonthContent" id="January">
+            <div class="navc">
+                <button class="nav" onclick="openTab(event, 'January')" id="defaultOpen">&#8249;</button>
+                <div class="title">January 2019</div>
+                <button class="nav" onclick="openTab(event, 'February')">&#8250;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">1</span></td>
+                    <td><span class="date">2</span></td>
+                    <td><span class="date">3</span></td>
+                    <td><span class="date">4</span></td>
+                    <td><span class="date">5</span></td>
+                </tr>
+                <tr>
+                    <td class="blackout"><span class="date">6</span></td>
+                    <td class="blackout"><span class="date">7</span></td>
+                    <td class="blackout"><span class="date">8</span></td>
+                    <td class="blackout"><span class="date">9</span></td>
+                    <td class="blackout"><span class="date">10</span></td>
+                    <td class="blackout"><span class="date">11</span></td>
+                    <td class="blackout"><span class="date">12</span></td>
+                </tr>
+                <tr>
+                    <td class="blackout"><span class="date">13</span></td>
+                    <td class="blackout"><span class="date">14</span></td>
+                    <td class="blackout"><span class="date">15</span></td>
+                    <td class="blackout"><span class="date">16</span></td>
+                    <td class="blackout"><span class="date">17</span></td>
+                    <td class="blackout"><span class="date">18</span></td>
+                    <td class="blackout"><span class="date">19</span></td>
+                </tr>
+                <tr>
+                    <td class="blackout"><span class="date">20</span></td>
+                    <td class="blackout"><span class="date">21</span></td>
+                    <td class="blackout"><span class="date">22</span></td>
+                    <td class="blackout"><span class="date">23</span></td>
+                    <td class="blackout"><span class="date">24</span></td>
+                    <td class="blackout"><span class="date">25</span></td>
+                    <td class="blackout"><span class="date">26</span></td>
+                </tr>
+                <tr>
+                    <td class="blackout"><span class="date">27</span></td>
+                    <td class="blackout"><span class="date">28</span></td>
+                    <td class="blackout"><span class="date">29</span></td>
+                    <td class="blackout"><span class="date">30</span></td>
+                    <td class="blackout"><span class="date">31</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                </tr>
+            </table>
+            <div class="monthinfo">
+                <hr>
+                <div>
+                    <ul>
+                        <li>January 6: Blackout begins.</li>
+                        <li>January 12, 1896 - Utah became the 45th State</li>
+                        <li>January 16, 1914 - The Ford Motor Company announced an eight-hour workday and that it would pay a “living wage” of at least $5 for a day’s labor.</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="MonthContent" id="February">
+            <div class="navc">
+                <button class="nav" onclick="openTab(event, 'January')">&#8249;</button>
+                <div class="title">February 2019</div>
+                <button class="nav" onclick="openTab(event, 'March')">&#8250;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td class="blackout"><span class="date">1</span></td>
+                    <td class="blackout"><span class="date">2</span></td>
+                </tr>
+                <tr>
+                    <td class="blackout"><span class="date">3</span></td>
+                    <td class="blackout"><span class="date">4</span></td>
+                    <td class="blackout"><span class="date">5</span></td>
+                    <td class="blackout"><span class="date">6</span></td>
+                    <td class="blackout"><span class="date">7</span></td>
+                    <td class="blackout"><span class="date">8</span></td>
+                    <td class="blackout"><span class="date">9</span></td>
+                </tr>
+                <tr>
+                    <td class="greyout"><span class="date">10</span></td>
+                    <td class="greyout"><span class="date">11</span></td>
+                    <td class="greyout"><span class="date">12</span></td>
+                    <td class="greyout"><span class="date">13</span></td>
+                    <td class="greyout"><span class="date">14</span></td>
+                    <td class="greyout"><span class="date">15</span></td>
+                    <td class="greyout"><span class="date">16</span></td>
+                </tr>
+                <tr>
+                    <td class="greyout"><span class="date">17</span></td>
+                    <td class="greyout"><span class="date">18</span></td>
+                    <td class="greyout"><span class="date">19</span></td>
+                    <td class="greyout"><span class="date">20</span></td>
+                    <td class="greyout"><span class="date">21</span></td>
+                    <td class="greyout"><span class="date">22</span></td>
+                    <td class="greyout"><span class="date">23</span></td>
+                </tr>
+                <tr>
+                    <td class="greyout"><span class="date">24</span></td>
+                    <td class="greyout"><span class="date">25</span></td>
+                    <td class="greyout"><span class="date">26</span></td>
+                    <td class="greyout"><span class="date">27</span></td>
+                    <td class="greyout"><span class="date">28</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                </tr>
+            </table>
+            <div class="monthinfo">
+                <hr>
+                <div>
+                    <ul>
+                        <li>February 10: Greyout begins.</li>
+                        <li>February 11, 1940 - The second full-length animated Walt Disney film, Pinocchio, premiered.</li>
+                        <li>February 17, 2005 - YouTube went live.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="MonthContent" id="March">
+            <div class="navc" id="March">
+                <button class="nav" onclick="openTab(event, 'February')">&#8249;</button>
+                <div class="title">March 2019</div>
+                <button class="nav" onclick="openTab(event, 'April')">&#8250;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td class="greyout"><span class="date">1</span></td>
+                    <td class="greyout"><span class="date">2</span></td>
+                </tr>
+                <tr>
+                    <td class="greyout"><span class="date">3</span></td>
+                    <td class="greyout"><span class="date">4</span></td>
+                    <td class="greyout"><span class="date">5</span></td>
+                    <td class="greyout"><span class="date">6</span></td>
+                    <td class="greyout"><span class="date">7</span></td>
+                    <td class="greyout"><span class="date">8</span></td>
+                    <td class="greyout"><span class="date">9</span></td>
+                </tr>
+                <tr>
+                    <td class="greyout"><span class="date">10</span></td>
+                    <td class="greyout"><span class="date">11</span></td>
+                    <td class="greyout"><span class="date">12</span></td>
+                    <td><span class="date">13</span></td>
+                    <td><span class="date">14</span></td>
+                    <td><span class="date">15</span></td>
+                    <td><span class="date">16</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">17</span></td>
+                    <td><span class="date">18</span></td>
+                    <td><span class="date">19</span></td>
+                    <td><span class="date">20</span></td>
+                    <td><span class="date">21</span></td>
+                    <td><span class="date">22</span></td>
+                    <td><span class="date">23</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">24</span></td>
+                    <td><span class="date">25</span></td>
+                    <td><span class="date">26</span></td>
+                    <td><span class="date">27</span></td>
+                    <td><span class="date">28</span></td>
+                    <td><span class="date">29</span></td>
+                    <td><span class="date">30</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">31</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                </tr>
+            </table>
+            <div class="monthinfo">
+                <hr>
+                <div>
+                    <ul>
+                        <li>March 1, 1998 - Titanic became the first film to gross over $1 billion worldwide.</li>
+                        <li>March 6, 1836 - The fall Fort Alamo.</li>
+                        <li>March 12: Greyout ends.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="MonthContent" id="April">
+            <div class="navc">
+            <button class="nav" onclick="openTab(event, 'March')">&#8249;</button>
+            <div class="title">April 2019</div>
+            <button class="nav" onclick="openTab(event, 'May')">&#8250;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">1</span></td>
+                    <td><span class="date">2</span></td>
+                    <td><span class="date">3</span></td>
+                    <td><span class="date">4</span></td>
+                    <td><span class="date">5</span></td>
+                    <td><span class="date">6</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">7</span></td>
+                    <td><span class="date">8</span></td>
+                    <td><span class="date">9</span></td>
+                    <td><span class="date">10</span></td>
+                    <td><span class="date">11</span></td>
+                    <td><span class="date">12</span></td>
+                    <td><span class="date">13</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">14</span></td>
+                    <td><span class="date">15</span></td>
+                    <td><span class="date">16</span></td>
+                    <td><span class="date">17</span></td>
+                    <td><span class="date">18</span></td>
+                    <td><span class="date">19</span></td>
+                    <td><span class="date">20</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">21</span></td>
+                    <td><span class="date">22</span></td>
+                    <td><span class="date">23</span></td>
+                    <td><span class="date">24</span></td>
+                    <td><span class="date">25</span></td>
+                    <td><span class="date">26</span></td>
+                    <td><span class="date">27</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">28</span></td>
+                    <td><span class="date">29</span></td>
+                    <td><span class="date">30</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                </tr>
+            </table>
+            <div class="monthinfo">
+                <hr>
+                <div>
+                    <ul>
+                        <li>April - Grilled Cheese Month</li>
+                        <li>April, 25, 1947 - President Harry Truman opened the two lane White House bowling alley.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="MonthContent" id="May">
+            <div class="navc">
+            <button class="nav" onclick="openTab(event, 'April')">&#8249;</button>
+            <div class="title">May 2019</div>
+            <button class="nav" onclick="openTab(event, 'June')">&#8250;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">1</span></td>
+                    <td><span class="date">2</span></td>
+                    <td><span class="date">3</span></td>
+                    <td><span class="date">4</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">5</span></td>
+                    <td><span class="date">6</span></td>
+                    <td><span class="date">7</span></td>
+                    <td><span class="date">8</span></td>
+                    <td><span class="date">9</span></td>
+                    <td><span class="date">10</span></td>
+                    <td><span class="date">11</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">12</span></td>
+                    <td><span class="date">13</span></td>
+                    <td><span class="date">14</span></td>
+                    <td><span class="date">15</span></td>
+                    <td><span class="date">16</span></td>
+                    <td><span class="date">17</span></td>
+                    <td><span class="date">18</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">19</span></td>
+                    <td><span class="date">20</span></td>
+                    <td><span class="date">21</span></td>
+                    <td><span class="date">22</span></td>
+                    <td><span class="date">23</span></td>
+                    <td><span class="date">24</span></td>
+                    <td><span class="date">25</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">26</span></td>
+                    <td><span class="date">27</span></td>
+                    <td><span class="date">28</span></td>
+                    <td><span class="date">29</span></td>
+                    <td><span class="date">30</span></td>
+                    <td><span class="date">31</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                </tr>
+            </table>
+            <div class="monthinfo">
+                <hr>
+                <div>
+                    <ul>
+                        <li>May 14, 1998 - 76.3 million people tuned in for the series finale of Seinfeld</li>
+                        <li>May 27: Memorial Day - Support Holiday</li>
+                        <li>May 31, 1806 - Future US President Andrew Jackson participated in a duel, killing Charles Dickinson.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="MonthContent" id="June">
+            <div class="navc">
+            <button class="nav" onclick="openTab(event, 'May')">&#8249;</button>
+            <div class="title">June 2019</div>
+            <button class="nav" onclick="openTab(event, 'June')">&#8250;</button>
+            </div>
+            <table>
+                <tr>
+
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tr>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">1</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">2</span></td>
+                    <td><span class="date">3</span></td>
+                    <td><span class="date">4</span></td>
+                    <td><span class="date">5</span></td>
+                    <td><span class="date">6</span></td>
+                    <td><span class="date">7</span></td>
+                    <td><span class="date">8</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">9</span></td>
+                    <td><span class="date">10</span></td>
+                    <td><span class="date">11</span></td>
+                    <td><span class="date">12</span></td>
+                    <td><span class="date">13</span></td>
+                    <td><span class="date">14</span></td>
+                    <td><span class="date">15</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">16</span></td>
+                    <td><span class="date">17</span></td>
+                    <td><span class="date">18</span></td>
+                    <td><span class="date">19</span></td>
+                    <td><span class="date">20</span></td>
+                    <td><span class="date">21</span></td>
+                    <td><span class="date">22</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">23</span></td>
+                    <td><span class="date">24</span></td>
+                    <td><span class="date">25</span></td>
+                    <td><span class="date">26</span></td>
+                    <td><span class="date">27</span></td>
+                    <td><span class="date">28</span></td>
+                    <td><span class="date">29</span></td>
+                </tr>
+                <tr>
+                    <td><span class="date">30</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                    <td><span class="date">&nbsp;</span></td>
+                </tr>
+            </table>
+            <div class="monthinfo">
+                <hr>
+                <div>
+                    <ul>
+                        <li>June 18, 1983 - The space shuttle Challenger launched into space on its second mission, with Dr. Sally Ride, making her the first American woman in space.</li>
+                        <li>June 24, 1997 - US Air Force officials released a 231-page report dismissing all of the claims of an alien spacecraft crash in Roswell, New Mexico, in 1947.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+
+<script>
+function openTab(evt, tabName) {
+    var i, MonthContent, nav;
+    MonthContent = document.getElementsByClassName("MonthContent");
+    for (i = 0; i < MonthContent.length; i++) {
+        MonthContent[i].style.display = "none";
+    }
+    nav = document.getElementsByClassName("nav");
+    for (i = 0; i < nav.length; i++) {
+        nav[i].className = nav[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
