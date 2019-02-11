@@ -1,4 +1,4 @@
-# Canvas-Support-Home
+# Support-Home
 
 https://sites.google.com/instructure.com/canvas/home
 
